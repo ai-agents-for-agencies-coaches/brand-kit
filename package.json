@@ -1,0 +1,18 @@
+{
+  "name": "brand-kit",
+  "version": "1.0.0",
+  "license": "MIT",
+  "description": "Per-client brand fidelity via the DESIGN.md standard \u2014 auto-extract, lint (WCAG), register, and feed tokens into image-studio, fb-ad-video-studio, and landing pages.",
+  "scripts": {
+    "extract": "python3 scripts/extract-brand.py",
+    "lint": "bash scripts/lint.sh",
+    "sync": "bash scripts/sync.sh",
+    "tokens": "python3 scripts/tokens-to-css.py"
+  },
+  "devDependencies": {
+    "@google/design.md": "latest"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
