@@ -43,6 +43,33 @@ Full detail in `references/integration.md`. Summary:
 
 **Don't use:** generic/demo work with no real client (use neutral placeholders — do not invent a brand). One-off internal scratch.
 
+## Client launch package (presentation-grade)
+
+The internal `DESIGN.md` (and `DESIGN.preview.*`) carry provenance, corrections,
+and lint notes — **never send those to a client.** For a launch call, generate
+the client-safe deliverable:
+
+```bash
+python3 scripts/client-brand-sheet.py <registry>/DESIGN.md \
+  --client "<Client Name>" --agency "<Your Agency>" \
+  --ads-dir <client>/creatives/campaign_<n> \
+  --out <client>/launch-package
+node scripts/render-sheet.js <client>/launch-package/brand-foundations.html
+```
+
+Produces `brand-foundations.pdf` + `.png`: a single branded one-pager (palette
+with friendly labels, type, components, the client's brand colors styling the
+sheet itself, and an optional strip of the first ad concepts). All internal
+language is stripped; it refuses to run if any `TODO: VERIFY` remains. Requires
+Playwright (uses the sibling `image-studio` skill's copy if not installed here).
+
+Host teams: sequence this into onboarding as
+intake → brand extract/verify/lint → sync/tokens → initial concepts →
+launch package (a project-level onboarding SOP can codify the exact commands).
+
 ## Output
 
-A registered, lint-clean `brand-kits/<slug>/DESIGN.md`, plus generated CSS/Tailwind tokens wired into the client's ad and landing-page projects. The DESIGN.md is the deliverable; everything else reads from it.
+A registered, lint-clean `brand-kits/<slug>/DESIGN.md` + generated CSS/Tailwind
+tokens wired into the client's projects, and (for launch) a client-safe
+`launch-package/brand-foundations.pdf`. The DESIGN.md is the source of truth;
+everything else reads from it.
