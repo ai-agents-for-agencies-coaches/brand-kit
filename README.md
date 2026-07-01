@@ -52,3 +52,12 @@ consume  → python3 scripts/tokens-to-css.py <project-dir>/DESIGN.md
 ## License
 
 MIT — see [LICENSE](LICENSE). The DESIGN.md format is by Google Labs (`google-labs-code/design.md`).
+
+---
+
+## Free training & community
+
+This is one of several **free** skills from the AI for Agencies & SMBs community.
+
+- 📺 **Free build-alongs & tutorials on YouTube:** https://www.youtube.com/@geopopos
+- 🚀 **Full AI marketing courses, templates & live support** inside the Skool community: https://www.skool.com/ai-for-agencies-smbs-1573
